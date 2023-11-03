@@ -7,23 +7,28 @@ export default function Navbar() {
     <>
       <Container>
         <Menu>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 9h16.5m-16.5 6.75h16.5"
-            />
-          </svg>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 9h16.5m-16.5 6.75h16.5"
+              />
+            </svg>
+          </div>
+          <h3>MENU</h3>
         </Menu>
         <Title> The Voltures</Title>
-        <Media>Home Songs Social</Media>
+        <Media>
+          <a>Social</a>
+        </Media>
       </Container>
     </>
   );
@@ -31,23 +36,36 @@ export default function Navbar() {
 
 const Container = styled.nav`
   max-height: 100px;
-  width: 100vw;
-  position: relative;
   top: 0;
   left: 0;
   color: #ffffff;
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1em 2em;
 `;
 
-const Menu = styled.a`
+const Menu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #ffffff;
-  width: 5%;
+  gap: 0.5em;
+  h3 {
+    font-weight: 400;
+  }
+  div {
+    width: 30px;
+  }
 `;
 
-const Title = styled.a``;
+const Title = styled.a`
+  font-size: 40px;
+`;
+
 const Media = styled.a`
   display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
 `;
