@@ -14,8 +14,6 @@ export default function Home() {
 }
 
 const Container = styled.div`
-  background-color:#000000;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  background-color: rgb(0, 70, 102);
+  position: relative;
 `
