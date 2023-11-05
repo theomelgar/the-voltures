@@ -68,7 +68,6 @@ const Container = styled.div`
   gap: 0.5em;
   font-size: 50px;
   font-weight: 500;
-  
 `;
 const Background = styled.img`
   height: 80%;
@@ -76,6 +75,11 @@ const Background = styled.img`
   position: absolute;
   bottom: 1em;
   right: 1em;
+  filter: drop-shadow(-110px 10px 14px #0947a5);
+  &:hover {
+    transform: translateY(-15px);
+    box-shadow: -10px 10px 20px 2px rgba(0, 255, 255, 0.7);
+  }
 `;
 
 const List = styled.div`
@@ -90,8 +94,10 @@ const List = styled.div`
 
 const Music = styled.div`
   cursor: pointer;
+  opacity: 0.6;
   font-size: 60px;
   margin: 5px;
+  text-shadow: 2px 2px 4px #000000;
   ${({ isSelected }) =>
-    isSelected && "opacity: 0.6;"}// Apply a style if isSelected is true
+    isSelected && "opacity: 1; "}// Apply a style if isSelected is true
 `;
