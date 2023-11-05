@@ -69,15 +69,22 @@ const Container = styled.div`
   font-size: 50px;
   font-weight: 500;
 `;
+
 const Background = styled.img`
   height: 80%;
   object-fit: contain;
   position: absolute;
   bottom: 1em;
   right: 1em;
-  filter: drop-shadow(-110px 10px 14px #0947a5);
+  filter: drop-shadow(-70px 10px 10px #0947a5);
+  box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
+    5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
+    17px 0px 17.6px rgba(0, 0, 0, 0.054), 31.8px 0px 33px rgba(0, 0, 0, 0.065),
+    76px 0px 79px rgba(0, 0, 0, 0.09);
+  transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
+
   &:hover {
-    transform: translateY(-15px);
+    transform: scale(1.04);
     box-shadow: -10px 10px 20px 2px rgba(0, 255, 255, 0.7);
   }
 `;
@@ -98,6 +105,11 @@ const Music = styled.div`
   font-size: 60px;
   margin: 5px;
   text-shadow: 2px 2px 4px #000000;
+
   ${({ isSelected }) =>
     isSelected && "opacity: 1; "}// Apply a style if isSelected is true
+    
+  &:hover{
+    opacity: 1;
+  }
 `;
