@@ -1,12 +1,34 @@
 import styled from 'styled-components';
 
+export default function MenuButton() {
+    const handleMenuClick = () => {
+      // Toggle the aside by changing the right property
+      const aside = document.querySelector('.aside');
+      aside.style.left = aside.style.left === '0px' ? '-300px' : '0px';
+    };
+
+  return (
+    <>
+      <MenuIconContainer>
+        <MenuIcon onClick={handleMenuClick}>
+          <input className="menu-icon__checkbox" type="checkbox" />
+          <div>
+            <span></span>
+            <span></span>
+          </div>
+        </MenuIcon>
+      </MenuIconContainer>
+      <Aside className="aside"></Aside>
+    </>
+  );
+}
+
 const MenuIcon = styled.div`
   position: relative;
   width: 50px;
   height: 50px;
   cursor: pointer;
   transform: scale(1.5);
-  
   .menu-icon__checkbox {
     display: block;
     width: 100%;
@@ -85,18 +107,16 @@ const MenuIcon = styled.div`
 
 const MenuIconContainer = styled.div`
   display: flex;
+  z-index:1;
+
 `;
 
-export default function MenuButton() {
-  return (
-    <MenuIconContainer>
-      <MenuIcon>
-        <input className="menu-icon__checkbox" type="checkbox" />
-        <div>
-          <span></span>
-          <span></span>
-        </div>
-      </MenuIcon>
-    </MenuIconContainer>
-  );
-}
+const Aside = styled.aside`
+  position: fixed;
+  top: 0;
+  right: -300px; // Initially hidden
+  width: 300px;
+  height: 100%;
+  background: #333; // Background color for the aside
+  transition: left 0.3s ease-in-out;
+`;

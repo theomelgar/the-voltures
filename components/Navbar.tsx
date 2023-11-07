@@ -9,24 +9,10 @@ export default function Navbar() {
       <Menu>
         <MenuButton/>
           <div>
-            {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 9h16.5m-16.5 6.75h16.5"
-            />
-          </svg> */}
           </div>
         <h3>MENU</h3>
       </Menu>
-      {/* <Title> The Voltures</Title> */}
+      <Title> The Voltures</Title>
       <Media>
         SOCIAL
         <a href="https://www.instagram.com/the_voltures/" target="_blank">
@@ -125,6 +111,7 @@ const Menu = styled.button`
 `;
 
 const Title = styled.a`
+  position: absolute;
   font-size: 40px;
   backdrop-filter: blur(5px);
   background-color: #000000;
