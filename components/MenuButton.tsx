@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import Aside from "./Aside";
 
 export default function MenuButton() {
-    const handleMenuClick = () => {
-      // Toggle the aside by changing the right property
-      const aside = document.querySelector('.aside');
-      aside.style.left = aside.style.left === '0px' ? '-300px' : '0px';
-    };
+  const handleMenuClick = () => {
+    // Toggle the aside by changing the right property
+    const aside = document.querySelector(".aside");
+    aside.style.left = aside.style.left === "0px" ? "-300px" : "0px";
+  };
 
   return (
     <>
@@ -18,7 +19,7 @@ export default function MenuButton() {
           </div>
         </MenuIcon>
       </MenuIconContainer>
-      <Aside className="aside"></Aside>
+      <Aside></Aside>
     </>
   );
 }
@@ -107,16 +108,5 @@ const MenuIcon = styled.div`
 
 const MenuIconContainer = styled.div`
   display: flex;
-  z-index:1;
-
-`;
-
-const Aside = styled.aside`
-  position: fixed;
-  top: 0;
-  right: -300px; // Initially hidden
-  width: 300px;
-  height: 100%;
-  background: #333; // Background color for the aside
-  transition: left 0.3s ease-in-out;
+  z-index: 1;
 `;

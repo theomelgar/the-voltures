@@ -76,7 +76,7 @@ const Background = styled.img`
   position: absolute;
   bottom: 1em;
   right: 1em;
-  filter: drop-shadow(-70px 10px 10px #0947a5);
+  filter: drop-shadow(-40px 10px 10px #0947a5);
   box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
     5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
     17px 0px 17.6px rgba(0, 0, 0, 0.054), 31.8px 0px 33px rgba(0, 0, 0, 0.065),
@@ -108,7 +108,7 @@ const Music = styled.div`
 
   ${({ isSelected }) =>
     isSelected && "opacity: 1; "}// Apply a style if isSelected is true
-    
+
   &:hover{
     opacity: 1;
   }
