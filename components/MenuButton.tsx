@@ -1,3 +1,5 @@
+'use client'
+
 import styled from "styled-components";
 import Aside from "./Aside";
 
@@ -5,7 +7,7 @@ export default function MenuButton() {
   const handleMenuClick = () => {
     // Toggle the aside by changing the right property
     const aside = document.querySelector(".aside");
-    aside.style.left = aside.style.left === "0px" ? "-300px" : "0px";
+    aside.style.left = aside.style.left === "0px" ? "-400px" : "0px";
   };
 
   return (

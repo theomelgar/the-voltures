@@ -7,12 +7,11 @@ export default function Navbar() {
   return (
     <Container>
       <Menu>
-        <MenuButton/>
-          <div>
-          </div>
+        <MenuButton />
+        <div></div>
         <h3>MENU</h3>
       </Menu>
-      <Title> The Voltures</Title>
+      <Title> THE VOLTURES</Title>
       <Media>
         SOCIAL
         <a href="https://www.instagram.com/the_voltures/" target="_blank">
@@ -88,19 +87,19 @@ const Container = styled.nav`
   align-items: center;
   width: 100vw;
   gap: 70%;
-  position: absolute;
-  top: 2em;
+  position: fixed;
+  top: 0;
   left: 0;
   z-index: 1;
+  background-color: rgba(189, 189, 189, 0.5);
 `;
 
-const Menu = styled.button`
+const Menu = styled.div`
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: rgb(0, 70, 102);
 
   h3 {
     font-weight: 400;
@@ -114,8 +113,7 @@ const Title = styled.a`
   position: absolute;
   font-size: 40px;
   backdrop-filter: blur(5px);
-  background-color: #000000;
-`;
+  font-family: 'Condiment', cursive;`;
 
 const Media = styled.div`
   display: flex;

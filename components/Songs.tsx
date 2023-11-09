@@ -41,7 +41,7 @@ export default function Songs() {
   }, [currentIndex]);
 
   return (
-    <Container>
+    <Container id="home">
       <Background src={selectedImage} />
       <List>
         {musicNames.map((musicName, index) => (

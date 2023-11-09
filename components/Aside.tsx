@@ -1,6 +1,8 @@
+'use client'
+
 import styled from "styled-components";
 
-export default function Aside(){
+export default function Aside() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -11,19 +13,21 @@ export default function Aside(){
   return (
     <Container className="aside">
       <Menu>
+        <Home onClick={() => scrollToSection("home")}>Home</Home>
         <Albums onClick={() => scrollToSection("albums")}>Albums</Albums>
-        {/* <About onClick(() => scrollToSection("about"))>About us</About>
-        <Contact onClick(() => scrollToSection("contact"))>Contact</Contact> */}
+        <About onClick={() => scrollToSection("about")}>About us</About>
+        <Contact onClick={() => scrollToSection("contact")}>Contact</Contact>
       </Menu>
     </Container>
   );
-};
+}
 
 const Container = styled.aside`
   position: fixed;
   top: 0;
-  right: -300px; // Initially hidden
-  width: 300px;
+  font-weight: 500;
+  right: -400px; // Initially hidden
+  width: 400px;
   height: 100vh;
   background: #333; // Background color for the aside
   transition: left 0.3s ease-in-out;
@@ -36,22 +40,31 @@ const Container = styled.aside`
 `;
 
 const Menu = styled.ul`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   margin: 50% 0px;
-  background-color: #9e9d9d;
   font-size: 74px;
   line-height: 0.92;
   letter-spacing: -0.04em;
-  text-decoration: none;
+  gap: 0.3em;
   list-style-type: none;
+  li{
+    cursor: pointer;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
 `;
 
-const About = styled.li``;
+const Home = styled.li`
+`;
+const About = styled.li`
+`;
 
-const Albums = styled.li``;
+const Albums = styled.li`
+`;
 
-const Contact = styled.li``;
+const Contact = styled.li`
+`;

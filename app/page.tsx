@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Navbar from '../components/Navbar'
 import Songs from '../components/Songs'
 import AlbumsSection from '@/components/Albums'
+import About from '@/components/About'
+import Info from '@/components/Info'
 export default function Home() {
   return (
     <main>
@@ -10,6 +12,8 @@ export default function Home() {
         <Navbar></Navbar>
         <Songs></Songs>
         <AlbumsSection></AlbumsSection>
+        <About></About>
+        <Info></Info>
       </Container>
     </main>
   )

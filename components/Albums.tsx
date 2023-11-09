@@ -1,22 +1,70 @@
 import React from "react";
 import styled from "styled-components";
-
+import album from "../public/soyouthinkyouknow.webp";
+import Image from "next/image";
 const AlbumsSection = () => {
   return (
     <Container id="albums">
       <Title>Albums</Title>
       <AlbumList>
         <AlbumItem>
-          <AlbumCover src="album1.jpg" alt="Album 1" />
-          <AlbumTitle>Album 1</AlbumTitle>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
         </AlbumItem>
         <AlbumItem>
-          <AlbumCover src="album2.jpg" alt="Album 2" />
-          <AlbumTitle>Album 2</AlbumTitle>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
         </AlbumItem>
         <AlbumItem>
-          <AlbumCover src="album3.jpg" alt="Album 3" />
-          <AlbumTitle>Album 3</AlbumTitle>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+      </AlbumList>
+      <Title>Singles & EPs</Title>
+      <AlbumList>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
         </AlbumItem>
       </AlbumList>
     </Container>
@@ -24,8 +72,9 @@ const AlbumsSection = () => {
 };
 
 const Container = styled.div`
-  background-color: #f0f0f0;
+  background-color: #dad9d9;
   padding: 20px;
+  height: 100vh;
 `;
 
 const Title = styled.h2`
@@ -37,12 +86,20 @@ const Title = styled.h2`
 const AlbumList = styled.ul`
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content:flex-start;
+  align-items: center;
+  height: 400px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+    gap: 5em;
+  border: 1px solid #7a7a7a;
 `;
 
 const AlbumItem = styled.li`
-  width: 200px;
+  flex: 0 0 auto;
+  width: 300px;  
 `;
 
 const AlbumCover = styled.img`
@@ -53,9 +110,14 @@ const AlbumCover = styled.img`
 `;
 
 const AlbumTitle = styled.p`
-  font-size: 18px;
   color: #444;
   margin-top: 10px;
+  h1 {
+    font-size: 21px;
+  }
+  h2 {
+    font-size: 15px;
+  }
 `;
 
 export default AlbumsSection;
