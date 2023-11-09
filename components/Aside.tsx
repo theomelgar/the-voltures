@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
-export default function Aside() {
-  return <Container className="aside">
-    <ul>
-    <Albums>Albums</Albums>
-    <About>About us</About>
-    <Contact>Contact</Contact>
-    </ul>
-  </Container>;
-}
+export default function Aside(){
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <Container className="aside">
+      <Menu>
+        <Albums onClick={() => scrollToSection("albums")}>Albums</Albums>
+        {/* <About onClick(() => scrollToSection("about"))>About us</About>
+        <Contact onClick(() => scrollToSection("contact"))>Contact</Contact> */}
+      </Menu>
+    </Container>
+  );
+};
 
 const Container = styled.aside`
   position: fixed;
@@ -26,8 +35,23 @@ const Container = styled.aside`
     76px 0px 79px rgba(0, 0, 0, 0.09);
 `;
 
-const About = styled.li``
+const Menu = styled.ul`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 50% 0px;
+  background-color: #9e9d9d;
+  font-size: 74px;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  list-style-type: none;
+`;
 
-const Albums = styled.li``
+const About = styled.li``;
 
-const Contact = styled.li``
+const Albums = styled.li``;
+
+const Contact = styled.li``;
