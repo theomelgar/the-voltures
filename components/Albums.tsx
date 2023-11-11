@@ -1,7 +1,9 @@
+'use client'
 import React from "react";
 import styled from "styled-components";
 import album from "../public/soyouthinkyouknow.webp";
 import Image from "next/image";
+
 const AlbumsSection = () => {
   return (
     <Container id="albums">
@@ -66,6 +68,34 @@ const AlbumsSection = () => {
             <h2>2019</h2>
           </AlbumTitle>
         </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
+        <AlbumItem>
+          <Image src={album} alt="Album 1" />
+          <AlbumTitle>
+            <h1>So You Think You Know</h1>
+            <h2>2019</h2>
+          </AlbumTitle>
+        </AlbumItem>
       </AlbumList>
     </Container>
   );
@@ -86,27 +116,23 @@ const Title = styled.h2`
 const AlbumList = styled.ul`
   list-style: none;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
   height: 400px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  
-    gap: 5em;
+
+  gap: 5.5em;
   border: 1px solid #7a7a7a;
 `;
 
 const AlbumItem = styled.li`
   flex: 0 0 auto;
-  width: 300px;  
-`;
-
-const AlbumCover = styled.img`
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 300px;
+  img{
+    border-radius: 20px;
+  }
 `;
 
 const AlbumTitle = styled.p`
