@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import logo from "../public/voltures-logo.png";
+import Image from "next/image";
+
+interface MusicProps {
+  isSelected?: boolean;
+}
 
 export default function Songs() {
-  const discos = {
+  const discos: any = {
     "Sunshine Girl":
       "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/17/02/ae/1702aeb3-25ce-9c25-e85c-c881955dca9c/artwork.jpg/1200x1200bb.jpg",
     "Love In That Way":
@@ -30,7 +36,7 @@ export default function Songs() {
     setSelectedImage(discos[musicNames[currentIndex + 1]]);
   };
 
-  const handleMusicClick = (index) => {
+  const handleMusicClick = (index:number) => {
     setCurrentIndex(index);
     setSelectedImage(discos[musicNames[index]]);
   };
@@ -43,6 +49,9 @@ export default function Songs() {
   return (
     <Container id="home">
       <Background src={selectedImage} />
+      <Logo>
+      <Image src={logo} alt="logo" width={300} height={0} />
+      </Logo>
       <List>
         {musicNames.map((musicName, index) => (
           <Music
@@ -68,6 +77,7 @@ const Container = styled.div`
   gap: 0.5em;
   font-size: 50px;
   font-weight: 500;
+  background-color: #000000;
 `;
 
 const Background = styled.img`
@@ -76,6 +86,7 @@ const Background = styled.img`
   position: absolute;
   bottom: 1em;
   right: 1em;
+  border-radius: 50%;
   filter: drop-shadow(-40px 10px 10px #0947a5);
   box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
     5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
@@ -89,6 +100,13 @@ const Background = styled.img`
   }
 `;
 
+const Logo = styled.div`
+  padding: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
+
 const List = styled.div`
   margin: 1em;
   position: absolute;
@@ -99,17 +117,14 @@ const List = styled.div`
   backdrop-filter: blur(5px);
 `;
 
-const Music = styled.div`
+const Music  = styled.div<MusicProps>`
   cursor: pointer;
-  opacity: 0.6;
+  opacity: ${(props) => (props.isSelected ? "1" : "0.6")};
   font-size: 60px;
   margin: 5px;
   text-shadow: 2px 2px 4px #000000;
 
-  ${({ isSelected }) =>
-    isSelected && "opacity: 1; "}// Apply a style if isSelected is true
-
-  &:hover{
+  &:hover {
     opacity: 1;
   }
 `;

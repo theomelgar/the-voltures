@@ -135,7 +135,7 @@ const AlbumItem = styled.li`
   }
 `;
 
-const AlbumTitle = styled.p`
+const AlbumTitle = styled.div`
   color: #444;
   margin-top: 10px;
   h1 {
