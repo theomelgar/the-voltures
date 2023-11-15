@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 export default function Aside() {
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId:string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
