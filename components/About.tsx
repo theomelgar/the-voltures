@@ -12,7 +12,7 @@ export default function About() {
       formed in 2016 uniting four friends who went to school together and shared
       the same musical taste. Making their live debut in school soirees, and
       evolving to bars and small venues up to festivals. In 2019 the time had
-      come for them to release their first single Don't Waste Your Life Away /
+      come for them to release their first single Don&apos;t Waste Your Life Away /
       Waiting on a Love to Come. Soon after, they released two more singles
       Mind Rules and Sunshine Girl. And finally, in November/2019 their debut
       album “So You Think You Know” was released independently, with all songs

@@ -6,7 +6,7 @@ import Aside from "./Aside";
 export default function MenuButton() {
   const handleMenuClick = () => {
     // Toggle the aside by changing the right property
-    const aside = document.querySelector(".aside");
+    const aside : any= document.querySelector(".aside");
     aside.style.left = aside.style.left === "0px" ? "-400px" : "0px";
   };
 

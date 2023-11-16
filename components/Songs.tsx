@@ -4,7 +4,7 @@ import logo from "../public/voltures-logo.png";
 import Image from "next/image";
 
 interface MusicProps {
-  isSelected?: boolean;
+  selected?: boolean;
 }
 
 export default function Songs() {
@@ -57,7 +57,7 @@ export default function Songs() {
           <Music
             key={musicName}
             onClick={() => handleMusicClick(index)}
-            isSelected={index === currentIndex}
+            selected={index === currentIndex}
           >
             {musicName}
           </Music>
@@ -119,7 +119,7 @@ const List = styled.div`
 
 const Music  = styled.div<MusicProps>`
   cursor: pointer;
-  opacity: ${(props) => (props.isSelected ? "1" : "0.6")};
+  opacity: ${(props) => (props.selected ? "1" : "0.6")};
   font-size: 60px;
   margin: 5px;
   text-shadow: 2px 2px 4px #000000;
