@@ -1,9 +1,9 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export default function About() {
   return (
     <Container id="about">
-      <img src="https://i.scdn.co/image/ab6761670000ecd494670de8b902ced404e3d028"/>
      <h1>
      Based in Rio de Janeiro and formed by João Gabriel (drums), João Amorim
       (guitar / vocals), Luca Meira (guitar / vocals) and José Fuks (keyboard/
@@ -31,14 +31,15 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
->img{
 
 }
 >h1{
   width: 50%;
   height: 400px;
-  font-size:20px
+  font-size:20px;
+  font-weight: 700;
+  color:white;
 }
 `;

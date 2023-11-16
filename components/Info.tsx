@@ -6,12 +6,9 @@ export default function Info() {
   return (
     <Container id="contact">
       <h1>Contact</h1>
-      {/* <div>
-        <Image src={logo} alt="logo" width={600} height={0} />
-      </div>
       <div>
         <Image src={banda} alt="banda" width={600} height={0}/>
-      </div> */}
+      </div>
     </Container>
   );
 }
@@ -21,5 +18,6 @@ const Container = styled.div`
   height: 100vh;
   background-color: #b8b7b7;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 `;
