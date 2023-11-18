@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Condiment&family=Voltaire&display=swap');
+@font-face {
+  font-family: 'NMFBurner-Regular';
+  src: url('/NMFBurner-Regular.otf') format('opentype');
+  /* Other font properties like font-weight and font-style can be added here */
+}
 body{
   margin: 0;
 }

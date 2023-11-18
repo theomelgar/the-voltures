@@ -36,7 +36,7 @@ export default function Songs() {
     setSelectedImage(discos[musicNames[currentIndex + 1]]);
   };
 
-  const handleMusicClick = (index:number) => {
+  const handleMusicClick = (index: number) => {
     setCurrentIndex(index);
     setSelectedImage(discos[musicNames[index]]);
   };
@@ -48,9 +48,13 @@ export default function Songs() {
 
   return (
     <Container id="home">
-      <Background src={selectedImage} />
+      <Te>
+        {/* <BlackArea/> */}
+        {/* <BlackSpot />  */}
+        <Background src={selectedImage} />
+      </Te>
       <Logo>
-      <Image src={logo} alt="logo" width={300} height={0} />
+        <Image src={logo} alt="logo" width={300} height={0} />
       </Logo>
       <List>
         {musicNames.map((musicName, index) => (
@@ -80,23 +84,76 @@ const Container = styled.div`
   background-color: #000000;
 `;
 
-const Background = styled.img`
-  height: 80%;
-  object-fit: contain;
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
-  border-radius: 50%;
+const Te = styled.div`
   filter: drop-shadow(-40px 10px 10px #0947a5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 3em;
+  right: 3em;
+  /* background: repeating-radial-gradient(#333, #333 16px, #ccc 17px, #333 18px);
+  border-radius: 50%; */
+  
+`;
+const BlackSpot = styled.div`
+  position: absolute;
+  top: 48%;
+  right: 48%;
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  background-color: #000000;
+  z-index: 1;
+`;
+
+const BlackArea = styled.div`
+  position: absolute;
+  top: 0%; /* Adjust top and left to center the ring */
+  left: 0%; /* Adjust top and left to center the ring */
+  width: 100%; /* Twice the width of the parent */
+  height: 100%; /* Twice the height of the parent */
+  border-radius: 50%;
+  background-color: #cfcfcf;
+  z-index: 1;
+`;
+const Background = styled.img`
+  object-fit: contain;
+  width: 700px;
+
+  border-radius: 50%;
   /* box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
     5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
     17px 0px 17.6px rgba(0, 0, 0, 0.054), 31.8px 0px 33px rgba(0, 0, 0, 0.065),
     76px 0px 79px rgba(0, 0, 0, 0.09); */
   transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
+  -webkit-animation: spin 14s linear infinite;
+  -moz-animation: spin 14s linear infinite;
+  animation: spin 14s linear infinite;
 
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
   &:hover {
     transform: scale(1.04);
     box-shadow: -10px 10px 20px 2px rgba(0, 255, 255, 0.7);
+    animation: none;
+
   }
 `;
 
@@ -105,7 +162,7 @@ const Logo = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`
+`;
 
 const List = styled.div`
   margin: 1em;
@@ -117,7 +174,7 @@ const List = styled.div`
   backdrop-filter: blur(5px);
 `;
 
-const Music  = styled.div<MusicProps>`
+const Music = styled.div<MusicProps>`
   cursor: pointer;
   opacity: ${(props) => (props.selected ? "1" : "0.6")};
   font-size: 60px;
